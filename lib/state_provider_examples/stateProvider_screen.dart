@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:riverpod_learning/provider/counter_provider.dart';
-import 'package:riverpod_learning/provider/name_provider.dart';
+import 'package:riverpod_learning/state_provider_examples/counter_provider.dart';
+import 'package:riverpod_learning/simple_provider_examples/providers/name_provider.dart';
 
 // this is example of stateProvider for int
 class StateProviderScreen extends ConsumerWidget {

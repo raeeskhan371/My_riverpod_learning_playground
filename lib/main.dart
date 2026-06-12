@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpod_learning/provider/notifierProviders/noteshome_screen.dart';
-import 'package:riverpod_learning/provider/notifierProviders/update_screen.dart';
+import 'package:riverpod_learning/notifire_provider_examples/screens/notes_home_screen.dart';
+import 'package:riverpod_learning/notifire_provider_examples/screens/update_note_screen.dart';
 
 void main() {
   runApp(ProviderScope(child: MyApp()));

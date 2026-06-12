@@ -1,5 +1,5 @@
 import 'package:riverpod/riverpod.dart';
-import 'package:riverpod_learning/provider/notifierProviders/noteApp_Notifier_Model.dart';
+import 'package:riverpod_learning/notifire_provider_examples/model/noteApp_Notifier_Model.dart';
 
 final noteProvider = NotifierProvider<NoteAppNotifier, List<NoteApp>>(
   NoteAppNotifier.new,

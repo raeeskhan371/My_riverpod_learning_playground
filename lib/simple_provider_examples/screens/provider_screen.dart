@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:riverpod_learning/provider/age_provider.dart';
-import 'package:riverpod_learning/provider/name_provider.dart';
-import 'package:riverpod_learning/provider/users_proivder.dart';
+import 'package:riverpod_learning/simple_provider_examples/providers/age_provider.dart';
+import 'package:riverpod_learning/simple_provider_examples/providers/name_provider.dart';
+import 'package:riverpod_learning/simple_provider_examples/providers/users_proivder.dart';
 
 class Homescreen extends ConsumerWidget {
   const Homescreen({super.key});

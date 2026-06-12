@@ -3,7 +3,7 @@ import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:riverpod_learning/provider/notifierProviders/noteApp_notifier_provider.dart';
+import 'package:riverpod_learning/notifire_provider_examples/notifierProviders/noteApp_notifier_provider.dart';
 
 class UpdateNoteScreen extends ConsumerStatefulWidget {
   final String title;

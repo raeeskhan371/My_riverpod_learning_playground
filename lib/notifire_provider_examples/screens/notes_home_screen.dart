@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:riverpod_learning/provider/notifierProviders/addnote_screen.dart';
-import 'package:riverpod_learning/provider/notifierProviders/noteApp_notifier_provider.dart';
-import 'package:riverpod_learning/provider/notifierProviders/update_screen.dart';
+import 'package:riverpod_learning/notifire_provider_examples/screens/add_note_screen.dart';
+import 'package:riverpod_learning/notifire_provider_examples/notifierProviders/noteApp_notifier_provider.dart';
+import 'package:riverpod_learning/notifire_provider_examples/screens/update_note_screen.dart';
 
 class NotesListScreen extends ConsumerWidget {
   NotesListScreen({super.key});

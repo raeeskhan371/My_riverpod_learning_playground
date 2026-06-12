@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpod_learning/provider/notifierProviders/counter_notifire_provider.dart';
+import 'package:riverpod_learning/notifire_provider_examples/notifierProviders/counter_notifire_provider.dart';
 // This is Example Of NotfierProvider
 
 class NotifierProviderScreen extends ConsumerWidget {
