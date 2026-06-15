@@ -19,4 +19,18 @@ class AuthNotifier extends StateNotifier<bool> {
     await _authServices.singUp(name: name, email: email, password: password);
     state = false;
   }
+
+  Future<void> userLogin({
+    required String email,
+    required String password,
+  }) async {
+    state = true;
+
+    await _authServices.login(email: email, password: password);
+  }
+
+  Future<void> userForgotPassword({required String email}) async {
+    state = true;
+    await _authServices.forgotPassword(email: email);
+  }
 }

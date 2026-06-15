@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_learning/async_notifier_Provider/auth/auth_widgets/custome_Textfield.dart';
 import 'package:riverpod_learning/async_notifier_Provider/auth/providers/authProvider.dart';
+import 'package:riverpod_learning/async_notifier_Provider/auth/screens/login_screen.dart';
 
 class SignUpScreen extends ConsumerStatefulWidget {
   SignUpScreen({super.key});
@@ -59,6 +60,15 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                     );
               },
               child: Text("Singup"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginScreen()),
+                );
+              },
+              child: Text("Login"),
             ),
           ],
         ),
