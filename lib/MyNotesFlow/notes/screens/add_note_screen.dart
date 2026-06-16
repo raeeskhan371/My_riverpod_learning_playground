@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:riverpod_learning/notifire_provider_examples/notifierProviders/noteApp_notifier_provider.dart';
-import 'package:riverpod_learning/notifire_provider_examples/screens/notes_home_screen.dart';
+import 'package:riverpod_learning/MyNotesFlow/notes/providers/note_provider.dart';
 
-class NotifierAddNoteScreen extends ConsumerWidget {
+class AddNoteScreen extends ConsumerWidget {
   final TextEditingController titleController = TextEditingController();
   final TextEditingController desController = TextEditingController();
-
-  NotifierAddNoteScreen({super.key});
+  AddNoteScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -60,19 +58,7 @@ class NotifierAddNoteScreen extends ConsumerWidget {
               height: 50,
               child: ElevatedButton(
                 onPressed: () {
-                  // dummy action
-                  ref
-                      .read(noteProvider.notifier)
-                      .addNote(
-                        titleController.text.toString(),
-                        desController.text.toString(),
-                      );
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => NotesListScreen()),
-                  );
-                  print("title: ${titleController.text}");
-                  print("desc: ${desController.text}");
+                  try {} catch (e) {}
                 },
                 child: Text("Add Note"),
               ),

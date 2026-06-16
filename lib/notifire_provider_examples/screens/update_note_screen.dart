@@ -5,11 +5,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:riverpod_learning/notifire_provider_examples/notifierProviders/noteApp_notifier_provider.dart';
 
-class UpdateNoteScreen extends ConsumerStatefulWidget {
+class NotifierUpdateNoteScreen extends ConsumerStatefulWidget {
   final String title;
   final String desc;
   final int index;
-  UpdateNoteScreen({
+  NotifierUpdateNoteScreen({
     super.key,
     required this.title,
     required this.desc,
@@ -17,10 +17,12 @@ class UpdateNoteScreen extends ConsumerStatefulWidget {
   });
 
   @override
-  ConsumerState<UpdateNoteScreen> createState() => _UpdateNoteScreenState();
+  ConsumerState<NotifierUpdateNoteScreen> createState() =>
+      _NotifierUpdateNoteScreenState();
 }
 
-class _UpdateNoteScreenState extends ConsumerState<UpdateNoteScreen> {
+class _NotifierUpdateNoteScreenState
+    extends ConsumerState<NotifierUpdateNoteScreen> {
   late TextEditingController titleController;
   late TextEditingController desController;
 

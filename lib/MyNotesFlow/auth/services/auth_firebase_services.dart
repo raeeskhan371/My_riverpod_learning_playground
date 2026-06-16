@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:riverpod_learning/async_notifier_Provider/auth/model/user_model.dart';
+import 'package:riverpod_learning/MyNotesFlow/auth/model/user_model.dart';
 
 class AuthFirebaseServices {
   FirebaseAuth _auth = FirebaseAuth.instance;

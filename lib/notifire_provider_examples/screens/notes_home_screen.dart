@@ -63,11 +63,12 @@ class NotesListScreen extends ConsumerWidget {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => UpdateNoteScreen(
-                                      title: note.title,
-                                      desc: note.description,
-                                      index: index,
-                                    ),
+                                    builder: (context) =>
+                                        NotifierUpdateNoteScreen(
+                                          title: note.title,
+                                          desc: note.description,
+                                          index: index,
+                                        ),
                                   ),
                                 );
                               },
@@ -96,7 +97,7 @@ class NotesListScreen extends ConsumerWidget {
         onPressed: () {
           Navigator.pushReplacement(
             context,
-            MaterialPageRoute(builder: (context) => AddNoteScreen()),
+            MaterialPageRoute(builder: (context) => NotifierAddNoteScreen()),
           );
         },
         child: Icon(Icons.add, color: Colors.white),

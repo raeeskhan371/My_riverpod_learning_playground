@@ -1,5 +1,5 @@
 import 'package:flutter_riverpod/legacy.dart';
-import 'package:riverpod_learning/async_notifier_Provider/auth/services/auth_firebase_services.dart';
+import 'package:riverpod_learning/MyNotesFlow/auth/services/auth_firebase_services.dart';
 
 final authProvider = StateNotifierProvider<AuthNotifier, bool>((ref) {
   return AuthNotifier();

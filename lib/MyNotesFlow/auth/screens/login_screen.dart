@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpod_learning/async_notifier_Provider/auth/auth_widgets/custome_Textfield.dart';
-import 'package:riverpod_learning/async_notifier_Provider/auth/providers/authProvider.dart';
-import 'package:riverpod_learning/async_notifier_Provider/auth/screens/testing_home_Screen.dart';
+import 'package:riverpod_learning/MyNotesFlow/auth/auth_widgets/custome_Textfield.dart';
+import 'package:riverpod_learning/MyNotesFlow/auth/providers/authProvider.dart';
+import 'package:riverpod_learning/MyNotesFlow/notes/screens/home_screen.dart';
 
 class LoginScreen extends ConsumerStatefulWidget {
   const LoginScreen({super.key});
