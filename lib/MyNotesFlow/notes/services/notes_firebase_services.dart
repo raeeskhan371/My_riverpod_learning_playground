@@ -18,6 +18,7 @@ class NotesFirebaseServices {
       title: title,
       description: description,
       id: docRef.id,
+      createdAt: null,
     );
     await docRef.set(note.toMap());
     print("NoteID: ${docRef.id}");

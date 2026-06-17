@@ -18,6 +18,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   Widget build(BuildContext context) {
     final notesAsync = ref.watch(streamNotesProvider);
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text("Home Screen"),
         centerTitle: true,

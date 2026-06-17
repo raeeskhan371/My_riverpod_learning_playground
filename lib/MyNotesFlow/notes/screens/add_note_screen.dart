@@ -70,6 +70,7 @@ class AddNoteScreen extends ConsumerWidget {
                   } catch (e) {
                     print("Error: ${e}");
                   }
+                  Navigator.pop(context);
                 },
                 child: Text("Add Note"),
               ),
