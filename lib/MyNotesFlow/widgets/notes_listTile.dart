@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_learning/MyNotesFlow/notes/model/note_model.dart';
+import 'package:riverpod_learning/MyNotesFlow/notes/providers/note_provider.dart';
+import 'package:riverpod_learning/MyNotesFlow/notes/screens/update_note_screen.dart';
 
-class Note_ListTile extends StatelessWidget {
-  const Note_ListTile({super.key, required this.note});
+class Note_ListTile extends ConsumerStatefulWidget {
+  Note_ListTile({super.key, required this.note});
 
-  final NoteModel note;
+  NoteModel note;
 
+  @override
+  ConsumerState<Note_ListTile> createState() => _Note_ListTileState();
+}
+
+class _Note_ListTileState extends ConsumerState<Note_ListTile> {
   @override
   Widget build(BuildContext context) {
     return ListTile(
@@ -21,7 +29,7 @@ class Note_ListTile extends StatelessWidget {
         ),
       ),
       title: Text(
-        note.title,
+        widget.note.title,
         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
         maxLines: 1,
         overflow: TextOverflow.ellipsis,
@@ -31,7 +39,7 @@ class Note_ListTile extends StatelessWidget {
         children: [
           SizedBox(height: 4),
           Text(
-            note.description,
+            widget.note.description,
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
             style: TextStyle(color: Colors.grey),
@@ -48,13 +56,23 @@ class Note_ListTile extends StatelessWidget {
         children: [
           IconButton(
             onPressed: () {
-              // EDIT action
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => UpdateNoteScreen(
+                    title: widget.note.title,
+                    description: widget.note.description,
+                    id: widget.note.id,
+                  ),
+                ),
+              );
             },
             icon: Icon(Icons.edit, color: Colors.blue),
           ),
           IconButton(
             onPressed: () {
-              // DELETE action
+              final id = widget.note.id;
+              ref.read(noteProvider.notifier).deleteNote(id: id);
             },
             icon: Icon(Icons.delete, color: Colors.red),
           ),

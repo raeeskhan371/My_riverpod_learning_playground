@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_learning/MyNotesFlow/notes/model/note_model.dart';
 import 'package:riverpod_learning/MyNotesFlow/notes/providers/note_provider.dart';
+import 'package:riverpod_learning/MyNotesFlow/notes/providers/stream_notes_provider.dart';
+import 'package:riverpod_learning/MyNotesFlow/notes/screens/add_note_screen.dart';
 import 'package:riverpod_learning/MyNotesFlow/widgets/notes_listTile.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
@@ -26,7 +28,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       body: notesAsync.when(
         data: (notes) {
           if (notes.isEmpty) {
-            return Text("No Notes Found");
+            return Center(child: Text("No Notes Found"));
           }
           return ListView.builder(
             itemCount: notes.length,
@@ -43,6 +45,16 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         loading: () {
           return CircularProgressIndicator(color: Colors.blue);
         },
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => AddNoteScreen()),
+          );
+        },
+        child: Icon(Icons.add, color: Colors.white),
+        backgroundColor: Colors.blueAccent,
       ),
     );
   }

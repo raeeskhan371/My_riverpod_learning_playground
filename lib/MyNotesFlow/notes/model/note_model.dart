@@ -3,7 +3,7 @@ import 'package:flutter/foundation.dart';
 class NoteModel {
   final String title;
   final String description;
-  final String? id;
+  final String id;
 
   NoteModel({required this.title, required this.description, required this.id});
 

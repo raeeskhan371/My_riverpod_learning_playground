@@ -9,11 +9,6 @@ final noteProvider = StateNotifierProvider<NoteProvider, NoteState>((ref) {
   return NoteProvider();
 });
 
-final streamNotesProvider = StreamProvider<List<NoteModel>>((ref) {
-  final repo = ref.watch(notesRepositriesProvider);
-  return repo.fetchingNotes();
-});
-
 class NoteProvider extends StateNotifier<NoteState> {
   NotesFirebaseServices _notesFirebaseServices = NotesFirebaseServices();
 
@@ -35,5 +30,21 @@ class NoteProvider extends StateNotifier<NoteState> {
       state = NoteState(error: e.toString(), isLoading: false);
       print(e);
     }
+  }
+
+  Future<void> deleteNote({required String id}) async {
+    await _notesFirebaseServices.userDeleteNote(id: id);
+  }
+
+  Future<void> updateNote({
+    required String newTitle,
+    required String newDes,
+    required String id,
+  }) async {
+    await _notesFirebaseServices.userUpdateNote(
+      newTitle: newTitle,
+      newDes: newDes,
+      id: id,
+    );
   }
 }
