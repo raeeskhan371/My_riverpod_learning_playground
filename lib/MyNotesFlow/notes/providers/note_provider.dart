@@ -1,9 +1,17 @@
 import 'package:riverpod/legacy.dart';
+import 'package:riverpod/riverpod.dart';
+import 'package:riverpod_learning/MyNotesFlow/notes/model/note_model.dart';
+import 'package:riverpod_learning/MyNotesFlow/notes/notes_repositries/notes_repositries.dart';
 import 'package:riverpod_learning/MyNotesFlow/notes/providers/note_state.dart';
 import 'package:riverpod_learning/MyNotesFlow/notes/services/notes_firebase_services.dart';
 
 final noteProvider = StateNotifierProvider<NoteProvider, NoteState>((ref) {
   return NoteProvider();
+});
+
+final streamNotesProvider = StreamProvider<List<NoteModel>>((ref) {
+  final repo = ref.watch(notesRepositriesProvider);
+  return repo.fetchingNotes();
 });
 
 class NoteProvider extends StateNotifier<NoteState> {

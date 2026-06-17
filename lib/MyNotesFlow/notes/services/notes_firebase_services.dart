@@ -11,9 +11,17 @@ class NotesFirebaseServices {
     required String description,
   }) async {
     final uid = _auth.currentUser!.uid;
-    final note = NoteModel(title: title, description: description);
-    final repository = await _firestore.collection("users").doc(uid);
+    final repository = _firestore.collection("users").doc(uid);
+    final docRef = repository.collection("notes").doc();
 
-    repository.collection("notes").add(note.toMap());
+    final note = NoteModel(
+      title: title,
+      description: description,
+      id: docRef.id,
+    );
+    await docRef.set(note.toMap());
+    print("NoteID: ${docRef.id}");
   }
+
+  // Fetching Data
 }

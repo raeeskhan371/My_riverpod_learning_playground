@@ -58,7 +58,18 @@ class AddNoteScreen extends ConsumerWidget {
               height: 50,
               child: ElevatedButton(
                 onPressed: () {
-                  try {} catch (e) {}
+                  final addnote = ref.read(noteProvider.notifier);
+
+                  try {
+                    addnote.addNote(
+                      title: titleController.text,
+                      description: desController.text,
+                    );
+                    titleController.clear();
+                    desController.clear();
+                  } catch (e) {
+                    print("Error: ${e}");
+                  }
                 },
                 child: Text("Add Note"),
               ),

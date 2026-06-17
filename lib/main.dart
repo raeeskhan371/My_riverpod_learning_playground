@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_learning/MyNotesFlow/notes/screens/add_note_screen.dart';
+import 'package:riverpod_learning/MyNotesFlow/notes/screens/home_screen.dart';
 import 'package:riverpod_learning/firebase_options.dart';
 
 void main() async {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home: AddNoteScreen(),
+      home: HomeScreen(),
     );
   }
 }
